@@ -26,17 +26,17 @@ namespace Drawing
             switch (_moveType)
             {
                 case "Круг":
-                    shapeFactory = CircleFactory.getCircleFactory();
+                    shapeFactory = new CircleFactory();
                     moving = false;
                     Refresh();
                     break;
                 case "Квадрат":
-                    shapeFactory = RectangleFactory.getRectangleFactory();
+                    shapeFactory = new RectangleFactory();
                     moving = false;
                     Refresh();
                     break;
                 case "Треугольник":
-                    shapeFactory = TriangleFactory.getTriangleFactory();
+                    shapeFactory = new TriangleFactory();
                     moving = false;
                     Refresh();
                     break;
@@ -154,7 +154,7 @@ namespace Drawing
                 {
                     moving = true;
                     Shape shape = Collect.getCollection().Touch(e.X, e.Y);
-                    decorator = new Decorator.Decorator(shape.X, shape.Y,shape.Width, shape.Height, Color.Black, Color.Black);
+                    decorator = new DecoratorFactory().GetShape(shape.X, shape.Y,shape.Width, shape.Height, Color.Black, Color.Black) as Decorator.Decorator;
                     decorator.Assign(shape, e);
                     Collect.getCollection().Add(decorator);
                 }

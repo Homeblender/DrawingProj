@@ -49,7 +49,6 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="Collect.cs" />
     <Compile Include="Decorator\Decorator.cs" />
     <Compile Include="Decorator\SelectType.cs" />
     <Compile Include="Factory\CircleFactory.cs" />
@@ -69,6 +68,7 @@
     <Compile Include="Shape\Rectangle.cs" />
     <Compile Include="Shape\Shape.cs" />
     <Compile Include="Shape\Triangle.cs" />
+    <Compile Include="Singletone\Collect.cs" />
     <EmbeddedResource Include="Form1.resx">
       <DependentUpon>Form1.cs</DependentUpon>
     </EmbeddedResource>
