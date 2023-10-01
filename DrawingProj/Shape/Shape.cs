@@ -19,17 +19,11 @@ namespace Drawing
         protected float x, y, width, height;
         protected float dx, dy;
 
-        protected bool touched;
         protected Color Line, Fill;
 
         
         public virtual void Draw(Graphics G) {}
 
-        public bool Touched
-        {
-            get => touched;
-            set => touched = value;
-        }
         public float X
         {
             get => x;

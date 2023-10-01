@@ -41,15 +41,18 @@ namespace Drawing
                     Refresh();
                     break;
                 case "Цвет границы":
-                    if (moving)
+                    if (decorator!=null)
                     {
-                        colorDialog1.ShowDialog();
-                        foreach (var item in Collect.getCollection().GetTouched())
+                        try
                         {
-                            item.line = colorDialog1.Color;
+                            colorDialog1.ShowDialog();
+                            decorator.shapeLine = colorDialog1.Color;
+                            decorator.Update();
                         }
+                        catch (NullReferenceException){}
+
+                        _moveType = "Выбор фигуры";
                         Refresh();
-                        moving = false;
                     }
                     else
                     {
@@ -58,15 +61,18 @@ namespace Drawing
                     }
                     break;
                 case "Цвет заливки":
-                    if (moving)
+                    if (decorator!=null)
                     {
-                        colorDialog2.ShowDialog();
-                        foreach (var item in Collect.getCollection().GetTouched())
+                        try
                         {
-                            item.fill = colorDialog2.Color;
+                            colorDialog2.ShowDialog();
+                            decorator.shapeFill = colorDialog2.Color;
+                            decorator.Update();
                         }
+                        catch (NullReferenceException){}
+                        _moveType = "Выбор фигуры";
                         Refresh();
-                        moving = false;
+
                     }
                     else
                     {
@@ -100,15 +106,11 @@ namespace Drawing
         }
         private void button4_Click(object sender, EventArgs e)
         {
-            if (moving)
+            if (decorator != null)
             {
-                foreach (var item in Collect.getCollection().GetTouched())
-                {
-                    Collect.getCollection().Remove(item);
-                }
+                Collect.getCollection().Remove(decorator.Shape);
                 Collect.getCollection().Remove(decorator);
                 Refresh();
-                moving = false;
             }
         }
         public Form1()
@@ -143,15 +145,13 @@ namespace Drawing
         {
             if (_moveType == "Выбор фигуры")
             {
-                foreach (var iShape in Collect.getCollection().GetTouched())
-                {
-                    iShape.Touched = false;
-                }
                 Collect.getCollection().Remove(decorator);
-                decorator = null;
+                if (decorator != null && !decorator.Touch(e.X, e.Y))
+                {
+                    decorator = null;
+                }
                 if (Collect.getCollection().Touch(e.X, e.Y) != null && !(Collect.getCollection().Touch(e.X, e.Y) is Decorator.Decorator))
                 {
-                    Console.WriteLine("START");
                     moving = true;
                     Shape shape = Collect.getCollection().Touch(e.X, e.Y);
                     decorator = new Decorator.Decorator(shape.X, shape.Y,shape.Width, shape.Height, Color.Black, Color.Black);

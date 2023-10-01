@@ -11,6 +11,9 @@ namespace Drawing.Decorator
         public SelectType Type { get; set; }
         public Shape Shape { get; set; }
 
+        public Color shapeLine;
+        public Color shapeFill;
+
 
         public Decorator(float x, float y, float width, float height, Color Line, Color Fill)
             : base(x, y, width, height, Line, Fill)
@@ -60,8 +63,6 @@ namespace Drawing.Decorator
                 return;
             }
             graphicsPath.Reset();
-
-            Console.WriteLine(Type.ToString());
         }
         
 
@@ -71,18 +72,25 @@ namespace Drawing.Decorator
             Shape.Y = Y;
             Shape.Width = Width;
             Shape.Height = Height;
-            /*Shape.line = line;
-            Shape.fill = fill;*/
+            Shape.line = shapeLine;
+            Shape.fill = shapeFill;
         }
-        
+        public override bool Touch(float x, float y)
+        {
+            GraphicsPath graphicsPath = new GraphicsPath();
+            graphicsPath.AddRectangle(new RectangleF( this.x - 8, this.y - 8, width + 16, height + 16));
+            graphicsPath.IsVisible(x, y);
+            return graphicsPath.IsVisible(x, y);
+        }
 
         public void Assign(Shape shape, MouseEventArgs e)
         {
             Shape = shape;
+            shapeLine = shape.line;
+            shapeFill = shape.fill;
             
             shape.DX = e.X - shape.X;
             shape.DY = e.Y - shape.Y;
-            shape.Touched = true;
 
             DX = e.X - X;
             DY = e.Y - Y;
@@ -133,6 +141,10 @@ namespace Drawing.Decorator
                 X = x;
                 width -= deltaX;
             }
+
+            width = width <= 15 ? 14 : width;
+            height = height <= 15 ? 14 : height;
+            SetType(x,y);
             Update();
 
         }

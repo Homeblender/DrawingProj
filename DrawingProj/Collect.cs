@@ -41,18 +41,6 @@ namespace Drawing
             }
             return null;
         }
-        public List<Shape> GetTouched()
-        {
-            var res = new List<Shape>();
-            for (int i = 0; i < shapes.Count; i++)
-            {
-                if (shapes[i].Touched)
-                {
-                    res.Add(shapes[i]);
-                }
-            }
-            return res;
-        }
         public int Count()
         {
             return shapes.Count();
