@@ -95,7 +95,6 @@ namespace Drawing.Decorator
             DX = e.X - X;
             DY = e.Y - Y;
             
-            Move(e.X, e.Y);
             SetType(e.X, e.Y);
         }
         
