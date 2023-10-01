@@ -1,0 +1,20 @@
+C:\Users\bragi\source\repos\Рисовалка\Рисовалка\bin\Debug\Рисовалка.exe.config
+C:\Users\bragi\source\repos\Рисовалка\Рисовалка\bin\Debug\Рисовалка.exe
+C:\Users\bragi\source\repos\Рисовалка\Рисовалка\bin\Debug\Рисовалка.pdb
+C:\Users\bragi\source\repos\Рисовалка\Рисовалка\obj\Debug\Рисовалка.csproj.AssemblyReference.cache
+C:\Users\bragi\source\repos\Рисовалка\Рисовалка\obj\Debug\Рисовалка.Form1.resources
+C:\Users\bragi\source\repos\Рисовалка\Рисовалка\obj\Debug\Рисовалка.Properties.Resources.resources
+C:\Users\bragi\source\repos\Рисовалка\Рисовалка\obj\Debug\Рисовалка.csproj.GenerateResource.cache
+C:\Users\bragi\source\repos\Рисовалка\Рисовалка\obj\Debug\Рисовалка.csproj.CoreCompileInputs.cache
+C:\Users\bragi\source\repos\Рисовалка\Рисовалка\obj\Debug\Рисовалка.exe
+C:\Users\bragi\source\repos\Рисовалка\Рисовалка\obj\Debug\Рисовалка.pdb
+C:\Users\kolch\OneDrive\Рабочий стол\Рисовалка\Рисовалка\Рисовалка\bin\Debug\Рисовалка.exe.config
+C:\Users\kolch\OneDrive\Рабочий стол\Рисовалка\Рисовалка\Рисовалка\bin\Debug\Рисовалка.exe
+C:\Users\kolch\OneDrive\Рабочий стол\Рисовалка\Рисовалка\Рисовалка\bin\Debug\Рисовалка.pdb
+C:\Users\kolch\OneDrive\Рабочий стол\Рисовалка\Рисовалка\Рисовалка\obj\Debug\Рисовалка.csproj.AssemblyReference.cache
+C:\Users\kolch\OneDrive\Рабочий стол\Рисовалка\Рисовалка\Рисовалка\obj\Debug\Рисовалка.Properties.Resources.resources
+C:\Users\kolch\OneDrive\Рабочий стол\Рисовалка\Рисовалка\Рисовалка\obj\Debug\Рисовалка.csproj.GenerateResource.cache
+C:\Users\kolch\OneDrive\Рабочий стол\Рисовалка\Рисовалка\Рисовалка\obj\Debug\Рисовалка.csproj.CoreCompileInputs.cache
+C:\Users\kolch\OneDrive\Рабочий стол\Рисовалка\Рисовалка\Рисовалка\obj\Debug\Рисовалка.exe
+C:\Users\kolch\OneDrive\Рабочий стол\Рисовалка\Рисовалка\Рисовалка\obj\Debug\Рисовалка.pdb
+C:\Users\kolch\OneDrive\Рабочий стол\Рисовалка\Рисовалка\Рисовалка\obj\Debug\Drawing.Form1.resources
