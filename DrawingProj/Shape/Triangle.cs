@@ -29,13 +29,7 @@ namespace Drawing
         {
             GraphicsPath pt = new GraphicsPath();
             pt.AddPolygon(points);
-            pt.IsVisible(x, y);
-            if (pt.IsVisible(x, y))
-            {
-                return true;
-            }
-            else
-                return false;
+            return pt.IsVisible(x, y);
         }
     }
 }
