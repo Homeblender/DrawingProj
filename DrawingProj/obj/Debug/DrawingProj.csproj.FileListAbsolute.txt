@@ -8,3 +8,5 @@ C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\obj\Debu
 C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\obj\Debug\DrawingProj.csproj.CoreCompileInputs.cache
 C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\obj\Debug\DrawingProj.exe
 C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\obj\Debug\DrawingProj.pdb
+C:\Users\kolch\RiderProjects\DrawingProj\DrawingProj\obj\Debug\DrawingProj.exe
+C:\Users\kolch\RiderProjects\DrawingProj\DrawingProj\obj\Debug\DrawingProj.pdb
