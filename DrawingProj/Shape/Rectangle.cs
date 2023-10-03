@@ -21,7 +21,6 @@ namespace Drawing
         {
             GraphicsPath graphicsPath = new GraphicsPath();
             graphicsPath.AddRectangle(new RectangleF(this.x, this.y, width, height));
-            graphicsPath.IsVisible(x, y);
             return graphicsPath.IsVisible(x, y);
         }
     }

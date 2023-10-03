@@ -118,6 +118,15 @@ namespace Drawing.Decorator
                 float deltaY = y - Y;
                 Y = y;
                 height -= deltaY;
+
+                if (width <= 0 )
+                {
+                    Type = SelectType.TOP_LEFT;
+                }
+                if (height <= 0)
+                {
+                    Type = SelectType.BOTTOM_RIGHT;
+                }
             }
             else if (Type == SelectType.TOP_LEFT)
             {
@@ -127,11 +136,27 @@ namespace Drawing.Decorator
                 X = x;
                 height -= deltaY;
                 width -= deltaX;
+                if (width <= 0 )
+                {
+                    Type = SelectType.TOP_RIGHT;
+                }
+                if (height <= 0)
+                {
+                    Type = SelectType.BOTTOM_LEFT;
+                }
             }
             else if (Type == SelectType.BOTTOM_RIGHT)
             {
                 height = y - Y;
                 width = x - X;
+                if (width <= 0 )
+                {
+                    Type = SelectType.BOTTOM_LEFT;
+                }
+                if (height <= 0)
+                {
+                    Type = SelectType.TOP_RIGHT;
+                }
             }
             else if (Type == SelectType.BOTTOM_LEFT)
             {
@@ -139,10 +164,16 @@ namespace Drawing.Decorator
                 float deltaX = x - X;
                 X = x;
                 width -= deltaX;
+                if (width <= 0 )
+                {
+                    Type = SelectType.BOTTOM_RIGHT;
+                }
+                if (height <= 0)
+                {
+                    Type = SelectType.TOP_LEFT;
+                }
             }
 
-            width = width <= 15 ? 14 : width;
-            height = height <= 15 ? 14 : height;
             SetType(x,y);
             Update();
 
