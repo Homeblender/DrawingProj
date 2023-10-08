@@ -49,6 +49,8 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="Composit\Composite.cs" />
+    <Compile Include="Composit\CompositeImpl.cs" />
     <Compile Include="Decorator\Decorator.cs" />
     <Compile Include="Decorator\SelectType.cs" />
     <Compile Include="Factory\CircleFactory.cs" />

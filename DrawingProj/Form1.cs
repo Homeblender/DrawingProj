@@ -2,6 +2,7 @@
 using System.Drawing;
 using System.Drawing.Drawing2D;
 using System.Windows.Forms;
+using Drawing.Composit;
 
 namespace Drawing
 {
@@ -19,6 +20,7 @@ namespace Drawing
         private Shape newShape;
 
         private Decorator.Decorator decorator;
+        private CompositeImpl composite;
         private bool moving;
         private void toolStrip1_ItemClicked(object sender, ToolStripItemClickedEventArgs e)
         {
@@ -143,6 +145,47 @@ namespace Drawing
 
         private void Form1_MouseDown(object sender, MouseEventArgs e)
         {
+            if (composite != null && Collect.getCollection().Touch(e.X, e.Y) != null)
+            {
+                moving = true;
+                composite.CountDelta(e.X, e.Y);
+            }
+            if (composite == null && Control.ModifierKeys == Keys.Shift && decorator!= null && !decorator.Shape.Touch(e.X, e.Y) && Collect.getCollection().Touch(e.X, e.Y) != null)
+            {
+                Shape shape = Collect.getCollection().Touch(e.X, e.Y);
+
+                composite = new CompositeImpl(shape.X, shape.Y, shape.Width, shape.Height, Color.Black, Color.Black);
+                composite.add(shape);
+                composite.add(decorator.Shape);
+
+                composite.Update();
+                composite.CountDelta(e.X, e.Y);
+                
+                Collect.getCollection().Remove(decorator);
+                decorator = null;
+                Collect.getCollection().Add(composite);
+
+                moving = true;
+            }
+            else if (composite != null && Control.ModifierKeys == Keys.Shift && Collect.getCollection().Touch(e.X, e.Y) != null)
+            {
+                Shape shape = Collect.getCollection().Touch(e.X, e.Y);
+                if (!composite.getElement().Contains(shape))
+                {
+                    composite.add(shape);
+
+                    composite.Update();
+                    composite.CountDelta(e.X, e.Y);
+                    
+                    Console.WriteLine(composite.getElement().Count);
+                    moving = true;
+                }
+            }
+            else if (composite != null)
+            {
+                Collect.getCollection().Remove(composite);
+                composite = null;
+            }
             if (_moveType == "Выбор фигуры")
             {
                 Collect.getCollection().Remove(decorator);
@@ -150,12 +193,13 @@ namespace Drawing
                 {
                     decorator = null;
                 }
-                if (Collect.getCollection().Touch(e.X, e.Y) != null && !(Collect.getCollection().Touch(e.X, e.Y) is Decorator.Decorator))
+                if (composite == null && Collect.getCollection().Touch(e.X, e.Y) != null && !(Collect.getCollection().Touch(e.X, e.Y) is Decorator.Decorator))
                 {
                     moving = true;
                     Shape shape = Collect.getCollection().Touch(e.X, e.Y);
                     decorator = new DecoratorFactory().GetShape(shape.X, shape.Y,shape.Width, shape.Height, Color.Black, Color.Black) as Decorator.Decorator;
                     decorator.Assign(shape, e);
+                    
                     Collect.getCollection().Add(decorator);
                 }
                 Refresh();
@@ -173,7 +217,15 @@ namespace Drawing
         {
             if (moving && e.Button == MouseButtons.Left)
             {
-                decorator.Drag(e.X, e.Y);
+                if (decorator != null)
+                {
+                    decorator.Drag(e.X, e.Y);
+                }
+                else if (composite != null)
+                {
+                    composite.Move(e.X, e.Y);
+                    //composite.Update(e.X, e.Y);
+                }
             }
 
             if (newShape != null && _moveType != "Выбор фигуры")
@@ -186,10 +238,7 @@ namespace Drawing
 
         private void Form1_MouseClick(object sender, MouseEventArgs e)
         {
-            if (Control.ModifierKeys == Keys.Shift)
-            {
 
-            }
         }
     }
 }

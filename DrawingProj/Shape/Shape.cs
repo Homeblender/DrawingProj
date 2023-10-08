@@ -4,7 +4,7 @@ using System.Drawing;
 namespace Drawing
 {
     [Serializable]
-    class Shape
+    public class Shape
     {
         
         public Shape(float x, float y, float width, float height, Color Line, Color Fill)

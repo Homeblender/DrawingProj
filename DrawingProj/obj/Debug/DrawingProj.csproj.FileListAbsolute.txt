@@ -1,0 +1,10 @@
+C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\bin\Debug\DrawingProj.exe.config
+C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\bin\Debug\DrawingProj.exe
+C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\bin\Debug\DrawingProj.pdb
+C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\obj\Debug\DrawingProj.csproj.AssemblyReference.cache
+C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\obj\Debug\Drawing.Form1.resources
+C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\obj\Debug\DrawingProj.Properties.Resources.resources
+C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\obj\Debug\DrawingProj.csproj.GenerateResource.cache
+C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\obj\Debug\DrawingProj.csproj.CoreCompileInputs.cache
+C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\obj\Debug\DrawingProj.exe
+C:\Users\kolch\OneDrive\Рабочий стол\DrawingProj\DrawingProj\obj\Debug\DrawingProj.pdb
