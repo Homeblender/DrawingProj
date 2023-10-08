@@ -16,7 +16,7 @@ namespace Drawing
 
         public override void Draw(Graphics G)
         {           
-            points[0].X = x;
+            points[0].X = x + width/2;
             points[1].X = x+width;
             points[2].X = x;
             points[0].Y = y;
